@@ -1,6 +1,16 @@
 # Notion Social Media Post Automation
 A tool that reads a scheduled event in your Notion.so and post it on your social media.
 
+## Run
+
+``` 
+java -jar 
+    -DnotionBearerToken=<TOKEN>
+    -DnotionShareDatabaseId=<ID> 
+    -DnotionApiUrl=https://api.notion.com
+    file.jar 
+```
+
 ## Make Script
 
 On the root folder you can find the `MakeFile` with shortcuts to the main commands as following.

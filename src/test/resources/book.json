@@ -1,0 +1,15 @@
+{
+  "book": {
+    "isbn": "1447264533",
+    "author": "Margaret Mitchell",
+    "title": "Gone with the Wind",
+    "synopsis": null,
+    "language": null
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "http://localhost:8081/api/books/1447264533"
+    }
+  ]
+}

@@ -21,11 +21,17 @@
     <junit.mockito.version>3.11.2</junit.mockito.version>
     <junit.byte.buddy.version>1.11.6</junit.byte.buddy.version>
     <junit.powermock.version>2.0.9</junit.powermock.version>
+    <open.feign.version>11.2</open.feign.version>
 
   </properties>
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M5</version>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -109,12 +115,24 @@
 
   <dependencies>
 
-    <!-- JUnit 5 Depencencies
-    https://www.baeldung.com/mockito-mock-methods
-    https://www.baeldung.com/mockito-junit-5-extension
-    https://www.baeldung.com/junit-5-extensions
-    issue: https://stackoverflow.com/questions/49441049/junit-5-does-not-execute-method-annotated-with-beforeeach
-    -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jsr310</artifactId>
+      <version>2.12.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-library</artifactId>
+      <version>2.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.tomakehurst</groupId>
+      <artifactId>wiremock</artifactId>
+      <version>2.27.2</version>
+      <scope>test</scope>
+    </dependency>
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
@@ -175,6 +193,29 @@
       <version>1.18.20</version>
       <optional>true</optional>
     </dependency>
+
+    <dependency>
+      <groupId>io.github.openfeign</groupId>
+      <artifactId>feign-okhttp</artifactId>
+      <version>${open.feign.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.openfeign</groupId>
+      <artifactId>feign-gson</artifactId>
+      <version>${open.feign.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.openfeign</groupId>
+      <artifactId>feign-slf4j</artifactId>
+      <version>${open.feign.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.3</version>
+    </dependency>
+
     <!-- JUnit 4 Compatibility
     <dependency>
         <groupId>org.junit.platform</groupId>

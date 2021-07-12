@@ -1,0 +1,32 @@
+[
+  {
+    "book": {
+      "isbn": "1447264533",
+      "author": "Margaret Mitchell",
+      "title": "Gone with the Wind",
+      "synopsis": null,
+      "language": null
+    },
+    "links": [
+      {
+        "rel": "self",
+        "href": "http://localhost:8081/api/books/1447264533"
+      }
+    ]
+  },
+  {
+    "book": {
+      "isbn": "0451524934",
+      "author": "George Orwell",
+      "title": "1984",
+      "synopsis": null,
+      "language": null
+    },
+    "links": [
+      {
+        "rel": "self",
+        "href": "http://localhost:8081/api/books/0451524934"
+      }
+    ]
+  }
+]
