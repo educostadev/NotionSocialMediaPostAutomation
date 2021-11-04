@@ -1,6 +1,11 @@
-package dev.educosta.automation.models;
+package dev.educosta.automation.notion;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.temporal.TemporalAccessor;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +14,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * POJO created based on Notion API Response using the web site https://json2csharp.com/json-to-pojo
- * Adjusts was made after the creation.
+ * POJO created based on Notion API Response using the web site https://json2csharp.com/json-to-pojo Adjusts was made after the creation.
  */
 @Getter
 @ToString
@@ -411,6 +415,29 @@ public class NotionQueryDatabaseResponse {
     private boolean archived;
     private Properties properties;
     private String url;
+
+    /**
+     * When the shareAt date is only a date without time it will be converted to a LocalDateTime with the start time plus 1 second to be between start
+     * and end localdatetime
+     */
+    public boolean isBetween(LocalDateTime start, LocalDateTime end) {
+      LocalDateTime sharedAt;
+      try {
+        sharedAt = LocalDateTime.from(convertToTemporalAccessor("yyyy-MM-dd'T'HH:mm:ss.SSSXXX"));
+      } catch (DateTimeParseException e) {
+        var temporal = convertToTemporalAccessor("yyyy-MM-dd");
+        var localDate = LocalDate.from(temporal);
+        sharedAt = LocalDateTime.of(localDate, start.plusSeconds(1).toLocalTime());
+      }
+      return sharedAt.isAfter(start) && sharedAt.isBefore(end);
+    }
+
+
+    private TemporalAccessor convertToTemporalAccessor(String format) {
+      //The format could be "2021-07-06T11:01:00.000-03:00" or 2021-07-06
+      String sharedAtDateText = this.getProperties().getShareAt().getDate().getStart();
+      return DateTimeFormatter.ofPattern(format).parse(sharedAtDateText);
+    }
   }
 
 }

@@ -1,4 +1,4 @@
-package dev.educosta.automation.models;
+package dev.educosta.automation.notion;
 
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;

@@ -7,18 +7,18 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class PropertiesEnumTest {
+class TokenPropertiesEnumTest {
 
   @BeforeEach
   void init() {
-    PropertiesEnum.clearAllProperties();
+    TokenPropertiesEnum.clearAllProperties();
   }
 
   @Test
   void failWhenPropertyNotSpecified() {
     assertThrows(
         RuntimeException.class,
-        PropertiesEnum.NOTION_API_URL::value
+        TokenPropertiesEnum.NOTION_API_URL::value
     );
   }
 
@@ -26,26 +26,26 @@ class PropertiesEnumTest {
   void failWhenSetNullProperty() {
     assertThrows(
         RuntimeException.class,
-        () -> PropertiesEnum.NOTION_API_URL.setValue(null)
+        () -> TokenPropertiesEnum.NOTION_API_URL.setValue(null)
     );
   }
 
   @Test
   void setPropertyValueWithSuccess() {
-    assertNull(System.getProperty(PropertiesEnum.NOTION_API_URL.getPropertyName()));
+    assertNull(System.getProperty(TokenPropertiesEnum.NOTION_API_URL.jvmPropertyName));
     String myUrl = "https://my-url.com";
-    PropertiesEnum.NOTION_API_URL.setValue(myUrl);
+    TokenPropertiesEnum.NOTION_API_URL.setValue(myUrl);
 
-    assertEquals(myUrl, PropertiesEnum.NOTION_API_URL.value());
+    assertEquals(myUrl, TokenPropertiesEnum.NOTION_API_URL.value());
   }
 
   @Test
   void doNotSetPropertyValueWhenNotEmpty() {
     String myUrl = "https://my-url-2.com";
-    System.setProperty(PropertiesEnum.NOTION_API_URL.getPropertyName(), myUrl);
+    System.setProperty(TokenPropertiesEnum.NOTION_API_URL.jvmPropertyName, myUrl);
 
-    PropertiesEnum.NOTION_API_URL.setValueIfPropertyEmpty("https://new-url.com");
+    TokenPropertiesEnum.NOTION_API_URL.setValueIfPropertyEmpty("https://new-url.com");
 
-    assertEquals(myUrl, PropertiesEnum.NOTION_API_URL.value());
+    assertEquals(myUrl, TokenPropertiesEnum.NOTION_API_URL.value());
   }
 }

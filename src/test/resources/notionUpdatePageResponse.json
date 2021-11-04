@@ -1,0 +1,269 @@
+{
+  "object": "page",
+  "id": "b2a7045c-e325-4589-b4ea-3b636cc0c10c",
+  "created_time": "2021-07-03T21:36:00.000Z",
+  "last_edited_time": "2021-11-02T12:47:00.000Z",
+  "cover": null,
+  "icon": null,
+  "parent": {
+    "type": "database_id",
+    "database_id": "b9a0520a-977b-4de2-970d-7edcd62577a6"
+  },
+  "archived": false,
+  "properties": {
+    "Remove title": {
+      "id": ";Sb`",
+      "type": "checkbox",
+      "checkbox": false
+    },
+    "Media title": {
+      "id": "=s}E",
+      "type": "relation",
+      "relation": []
+    },
+    "Note URL": {
+      "id": "?gWU",
+      "type": "rollup",
+      "rollup": {
+        "type": "array",
+        "array": [
+          {
+            "type": "url",
+            "url": null
+          }
+        ],
+        "function": "show_original"
+      }
+    },
+    "Remove hash tags": {
+      "id": "CmDf",
+      "type": "checkbox",
+      "checkbox": false
+    },
+    "*Integration Log": {
+      "id": "GD;k",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Line1\n",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "blue"
+          },
+          "plain_text": "Line1\n",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "Line2\n",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "red"
+          },
+          "plain_text": "Line2\n",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "Line3\n",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "green"
+          },
+          "plain_text": "Line3\n",
+          "href": null
+        }
+      ]
+    },
+    "Media URL": {
+      "id": "N_K}",
+      "type": "rollup",
+      "rollup": {
+        "type": "array",
+        "array": [],
+        "function": "show_original"
+      }
+    },
+    "*Share text": {
+      "id": "VLDp",
+      "type": "formula",
+      "formula": {
+        "type": "string",
+        "string": "\"The secret to building great products is not creating awesome features, it's to make your users awesome\" - Book Making User Awsome\n\n#quotes"
+      }
+    },
+    "*Shared time": {
+      "id": "XkY>",
+      "type": "date",
+      "date": {
+        "start": "2021-11-02T09:47:00.000-03:00",
+        "end": null
+      }
+    },
+    "*Shared on": {
+      "id": "Yrz~",
+      "type": "multi_select",
+      "multi_select": [
+        {
+          "id": "bb8aa945-599c-4a0e-9beb-b90bca5ae3f3",
+          "name": "twitter",
+          "color": "default"
+        },
+        {
+          "id": "b7f2b1d6-0b43-4908-9ee9-7e46f27e937d",
+          "name": "linkedin",
+          "color": "default"
+        }
+      ]
+    },
+    "*Share at": {
+      "id": "]zLp",
+      "type": "date",
+      "date": {
+        "start": "2021-11-02",
+        "end": null
+      }
+    },
+    "Hash tags": {
+      "id": "ed<}",
+      "type": "multi_select",
+      "multi_select": [
+        {
+          "id": "bb40dd00-ca92-4320-b1dd-57f95e33ecbb",
+          "name": "#quotes",
+          "color": "yellow"
+        }
+      ]
+    },
+    "Description": {
+      "id": "gcmB",
+      "type": "rich_text",
+      "rich_text": []
+    },
+    "Media description": {
+      "id": "ktFj",
+      "type": "rollup",
+      "rollup": {
+        "type": "array",
+        "array": [],
+        "function": "show_original"
+      }
+    },
+    "Note title": {
+      "id": "nWwS",
+      "type": "relation",
+      "relation": [
+        {
+          "id": "bb626b98-54cb-48f8-ae4c-012c622580b1"
+        }
+      ]
+    },
+    "Share media text": {
+      "id": "otD_",
+      "type": "formula",
+      "formula": {
+        "type": "string",
+        "string": "\n\n\n#quotes\n"
+      }
+    },
+    "Remove URL": {
+      "id": "t}CJ",
+      "type": "checkbox",
+      "checkbox": false
+    },
+    "Share note text": {
+      "id": "z<oU",
+      "type": "formula",
+      "formula": {
+        "type": "string",
+        "string": "\"The secret to building great products is not creating awesome features, it's to make your users awesome\" - Book Making User Awsome\n\n#quotes"
+      }
+    },
+    "Note description": {
+      "id": "{i:k",
+      "type": "rollup",
+      "rollup": {
+        "type": "array",
+        "array": [
+          {
+            "type": "text",
+            "text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "\"The secret to building great products is not creating awesome features, it's to make your users awesome\"",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "\"The secret to building great products is not creating awesome features, it's to make your users awesome\"",
+                "href": null
+              }
+            ]
+          }
+        ],
+        "function": "show_original"
+      }
+    },
+    "# Twitter (280ch)": {
+      "id": "~|fa",
+      "type": "formula",
+      "formula": {
+        "type": "number",
+        "number": 23
+      }
+    },
+    "Name": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Quote1",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Quote1",
+          "href": null
+        }
+      ]
+    }
+  },
+  "url": "https://www.notion.so/Quote1-b2a7045ce3254589b4ea3b636cc0c10c"
+}

@@ -13,7 +13,8 @@ check:
 
 # execute build without tests and run the application with local-container profile
 run: build
-	java -jar target/$(JAR_FILE_NAME).jar
+	java -jar target/$(JAR_FILE_NAME)-jar-with-dependencies.jar \
+    -DrequestLinkedinTokenOnly=TRUE
 
 # Running tests in 4 threads
 test:

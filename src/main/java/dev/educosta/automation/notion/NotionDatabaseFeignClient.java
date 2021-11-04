@@ -1,12 +1,10 @@
-package dev.educosta.automation.clients;
+package dev.educosta.automation.notion;
 
-import dev.educosta.automation.models.NotionQueryDatabaseRequest;
-import dev.educosta.automation.models.NotionQueryDatabaseResponse;
 import feign.Headers;
 import feign.Param;
 import feign.RequestLine;
 
-public interface NotionDatabaseClient {
+public interface NotionDatabaseFeignClient {
 
   @RequestLine("POST /v1/databases/{notionDatabaseId}/query")
   @Headers({
@@ -18,6 +16,18 @@ public interface NotionDatabaseClient {
       @Param("notionBearerToken") String notionBearerToken,
       @Param("notionDatabaseId") String notionDatabaseId,
       NotionQueryDatabaseRequest body
+  );
+
+  @RequestLine("PATCH /v1/pages/{notionPageId}")
+  @Headers({
+      "Content-Type: application/json",
+      "Notion-Version: 2021-05-13",
+      "Authorization: Bearer {notionBearerToken}"
+  })
+  void updatePage(
+      @Param("notionBearerToken") String notionBearerToken,
+      @Param("notionPageId") String notionPageId,
+      NotionUpdatePageRequest body
   );
 
 }

@@ -3,6 +3,7 @@ package dev.educosta.automation;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.get;
+import static com.github.tomakehurst.wiremock.client.WireMock.patch;
 import static com.github.tomakehurst.wiremock.client.WireMock.post;
 import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
@@ -55,6 +56,15 @@ public abstract class AbstractIntegrationTest {
   public void stubPostFor(String path, String jsonResponse) {
     stubFor(
         post(urlPathEqualTo(path))
+            .willReturn(
+                aResponse()
+                    .withHeader("Content-Type", "application/json")
+                    .withBody(jsonResponse)));
+  }
+
+  public void stubPatchFor(String path, String jsonResponse) {
+    stubFor(
+        patch(urlPathEqualTo(path))
             .willReturn(
                 aResponse()
                     .withHeader("Content-Type", "application/json")
