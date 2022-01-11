@@ -95,11 +95,4 @@ public enum TokenPropertiesEnum {
     return Boolean.parseBoolean(System.getProperty("shouldPostOnTwitter", "TRUE"));
   }
 
-  /**
-   * Used to request a new linkedin token only.
-   */
-  public static boolean requestLinkedinTokenOnly() {
-    return Boolean.parseBoolean(System.getProperty("requestLinkedinTokenOnly", "FALSE"));
-  }
-
 }

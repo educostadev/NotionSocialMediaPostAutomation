@@ -2,6 +2,7 @@ package dev.educosta;
 
 import dev.educosta.automation.OrchestrationService;
 import dev.educosta.automation.TokenPropertiesEnum;
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class Main {
@@ -14,7 +15,7 @@ public class Main {
 
   void fire(String[] args) {
 
-    boolean requestLinkedinTokenOnly = Stream.of(args).anyMatch("requestLinkedinTokenOnly"::equals);
+    boolean requestLinkedinTokenOnly = Arrays.asList(args).contains("requestLinkedinTokenOnly");
     if (requestLinkedinTokenOnly) {
       service.requestToken();
     } else {

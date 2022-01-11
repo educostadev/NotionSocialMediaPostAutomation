@@ -63,7 +63,7 @@ java -jar \
 - `-Dinterval=<MINUTES>` Amount of minutes to be added to the current time to check if pages from Notion is between NOW and NOW + INTERVAL. If not specified the default value is 5 minutes.
 - `-DshouldPostOnLinkedin=<FALSE|TRUE>` Turn off the last step to post on Linkedin. Default value is TRUE when not specified.
 - `-DshouldPostOnTwitter=<FALSE|TRUE>` Turn off the last step to post on Linkedin. Default value is TRUE when not specified.
-- `-DrequestLinkedinTokenOnly=<FALSE|TRUE>` Run the application only to request the linkedin token. Provide the URL for authorization using the browser. The default value is FALSE when not specified.
+- `requestLinkedinTokenOnly` This is an application ARGS parameter." Run the application only to request the linkedin token. Give you the URL for authorization, you should use the browser for complete the process.
 
 ## Make Script
 
